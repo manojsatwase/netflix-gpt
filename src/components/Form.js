@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
 import {
@@ -80,6 +80,17 @@ const Login = () => {
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
   };
+
+  useEffect(()=>{
+    const timer = setTimeout(()=>{
+      setErrorMessage(null);
+    },5000);
+    
+    return ()=>{
+      clearTimeout(timer);
+    }
+  },[errorMessage]);
+
   return (
     <div>
       <Header />
