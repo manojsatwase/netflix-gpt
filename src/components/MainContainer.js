@@ -9,12 +9,11 @@ const MainContainer = () => {
     if(!movies) return; // early return
     const randomNumber = getRandomNumber(1,movies?.length);
     const mainMovies = movies?.[randomNumber];
-    const {original_title,overview} = mainMovies;
-    const id = mainMovies?.id;
+
   return (
     <div>
-        <VideoTitle title={original_title} overview={overview}/>
-        <VideoBackground mivieId={id} />
+        <VideoTitle title={mainMovies?.original_title} overview={mainMovies?.overview}/>
+        <VideoBackground mivieId={mainMovies?.id} />
     </div>
   )
 }
