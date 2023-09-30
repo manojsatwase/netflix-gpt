@@ -8,8 +8,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    // Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MjM0Yjc1ZTMyZTIzOWE1MzNlNGYxNzNmZjg5ODcxMSIsInN1YiI6IjY1MDdlZmVkZmEyN2Y0MDBhZTlmMThlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rtmXG7OkbtlQs1XGArY3zAqwRE9n7p-5MWfeLdat0kk'
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -27,3 +26,4 @@ export const SUPPORTED_LANGUAGES = [
 export const  getRandomNumber = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min);
 
 export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+

@@ -1,10 +1,12 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUpcomingMovies } from "../utils/moviesSlice";
 import { API_OPTIONS } from "../utils/  constants";
 
 const useUpcomingMovies = () => {
     const dispatch = useDispatch();
+
+    const upcomingMovies = useSelector(state=>state.movies.upcomingMovies);
 
  // Fetch Data from TMDB API and update store
   const getUpcomingMovies = async () => {
@@ -17,7 +19,7 @@ const useUpcomingMovies = () => {
   useEffect(()=>{
     // how do i make an api call => i wiil make an api call my function inside my useEffect
     // why we call insite useEffect => so that i can call it only once whenever my component render i will call only once
-    getUpcomingMovies();
+   !upcomingMovies && getUpcomingMovies();
   },[]);
 
   return;

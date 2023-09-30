@@ -11,7 +11,7 @@ const MainContainer = () => {
     const mainMovies = movies?.[randomNumber];
 
   return (
-    <div>
+    <div className='pt-[30%] bg-black md:pt-0'>
         <VideoTitle title={mainMovies?.original_title} overview={mainMovies?.overview}/>
         <VideoBackground mivieId={mainMovies?.id} />
     </div>
